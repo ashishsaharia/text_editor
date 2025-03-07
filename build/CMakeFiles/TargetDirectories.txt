@@ -1,0 +1,8 @@
+/home/snobody04/projects/textEditor3/build/CMakeFiles/out.dir
+/home/snobody04/projects/textEditor3/build/CMakeFiles/edit_cache.dir
+/home/snobody04/projects/textEditor3/build/CMakeFiles/rebuild_cache.dir
+/home/snobody04/projects/textEditor3/build/libs/CMakeFiles/page.dir
+/home/snobody04/projects/textEditor3/build/libs/CMakeFiles/scrollbar.dir
+/home/snobody04/projects/textEditor3/build/libs/CMakeFiles/text.dir
+/home/snobody04/projects/textEditor3/build/libs/CMakeFiles/edit_cache.dir
+/home/snobody04/projects/textEditor3/build/libs/CMakeFiles/rebuild_cache.dir

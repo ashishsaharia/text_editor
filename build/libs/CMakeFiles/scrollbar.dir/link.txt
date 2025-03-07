@@ -1,0 +1,2 @@
+/usr/bin/ar qc libscrollbar.a CMakeFiles/scrollbar.dir/scrollBar.cpp.o
+/usr/bin/ranlib libscrollbar.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libpage.a CMakeFiles/page.dir/page.cpp.o
+/usr/bin/ranlib libpage.a
