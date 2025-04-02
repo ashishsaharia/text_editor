@@ -1,5 +1,3 @@
-
-
 #include <SFML/Graphics.hpp>
 #include "./libs/page.h"
 #include <vector>
@@ -7,6 +5,30 @@
 #include "./libs/scrollBar.h"
 #include "./libs/text.h"
 #include <math.h>
+#include "./libs/linesDoublyLinkedList.h"
+#include "./libs/stringDoublyLinkedList.h"
+
+
+
+
+
+struct PageText 
+{
+    public:
+    unsigned int pageNo;
+    LineList text; 
+
+    PageText() = default;
+
+    PageText(int pageNo,  LineList& text )
+    {
+        this->pageNo = pageNo; 
+        this->text = text; 
+    }
+
+};
+
+
 
 #define WINDOW_HEIGHT 900
 #define WINDOW_WIDHT 1300
@@ -34,7 +56,7 @@
 void setBlinkingLineCordPos(float& xPos , float& yPos , const int& xIndex , const int& yIndex, const sf::Vector2f& textBoxPos, const int& fontHeight, const float& fontWidth )
 {
     xPos = static_cast<float> (xPos + fontWidth);
-    yPos = static_cast<float> ((yIndex*fontHeight) + textBoxPos.y); 
+    yPos = static_cast<float> ((yIndex*fontHeight) + textBoxPos.y - fontHeight/3); 
     return ; 
 }
 
@@ -43,9 +65,12 @@ void setBlinkingLineCordPos(float& xPos , float& yPos , const int& xIndex , cons
 int count = 0;
 int main()
 {
-
+    // this tell the 2d index of the line
     int blinkingLineIndexX = 0 , blinkingLineIndexY ; 
     blinkingLineIndexY = 0 ; 
+
+
+
     float blinkingLineXpos = 0; 
     float blinkingLineYpos = 0; 
 
@@ -53,23 +78,26 @@ int main()
     bool isFocusOnPage = false;
     size_t blinkingLineOnPage = 0;
     sf ::Clock clock;
-    int blinkingCursorWidth = 1;
-    float blinkingCursorLenght = 20;
+    int blinkingLineWidth = 1;
+    float blinkingLineLenght = 20;
 
-    sf::RectangleShape blinkingLine(sf::Vector2f(blinkingCursorWidth, blinkingCursorLenght));
+    sf::RectangleShape blinkingLine(sf::Vector2f(blinkingLineWidth, blinkingLineLenght));
     blinkingLine.setFillColor(sf::Color::Black);
 
     bool blinkingLineVisible = true;
 
-    sf::Cursor cursor;
+    sf::Cursor cursor; // this cursor is that arrow what is used to point. 
 
     sf::Font font;
-    if (!font.loadFromFile("../res/Arial.ttf"))
+    if (!font.loadFromFile("../res/Anonymous.ttf"))
         return EXIT_FAILURE;
     else
         std::cout << "the font has been loaded" << std::endl;
 
-    std::string firstSentence = "";
+
+
+    std::string firstSentence = "";   
+    
     int fontSize = 14;
     int lineSpacing = 1;
 
@@ -119,13 +147,14 @@ int main()
 
     sf::Glyph glyph = font.getGlyph('a', fontSize, false);
     float fontWidht = glyph.advance;
+    blinkingLineLenght = font.getLineSpacing(fontSize);
 
 
     // blinkingLine.setPosition( sf::Vector2f (   window.mapCoordsToPixel(texts[0].text.getGlobalBounds().getPosition())));
     blinkingLineXpos = texts[0].text.getPosition().x;
     blinkingLineYpos = texts[0].text.getPosition().y;
 
-    // blinkingCursorLenght = fontSize; 
+    // blinkingLineLenght = fontSize; 
     while (window.isOpen())
     {
         // std::cout << isFocusOnPage << std::endl;
@@ -136,9 +165,8 @@ int main()
             // sf::Vector2i textWindowBounds = window.mapCoordsToPixel(a.text.getGlobalBounds().getPosition(), view);
             textBounds.push_back(a.text.getGlobalBounds());
         }
-        // blinkingCursorLenght = texts[blinkingLineOnPage].text.getCharacterSize() + texts[blinkingLineOnPage].text.getCharacterSize() /3 ;
-        blinkingCursorLenght = fontSize;
-        blinkingLine.setSize(sf::Vector2f(blinkingCursorWidth, blinkingCursorLenght));
+        // blinkingLineLenght = texts[blinkingLineOnPage].text.getCharacterSize() + texts[blinkingLineOnPage].text.getCharacterSize() /3 ;
+        // blinkingLine.setSize(sf::Vector2f(blinkingLineWidth, blinkingLineLenght));
 
         bool cursorOnText = false;
 
@@ -326,13 +354,13 @@ int main()
                     currentString = texts[blinkingLineOnPage].chars;
                     size_t currentStringSize = currentString.getSize();
                     float currentCharWidht = 0 ; 
-                    if (event.text.unicode == 8)
-                    {
+                    if (event.text.unicode == 8) // this is for backspace 
+                    {   
                         if (!currentString.isEmpty()){
                             currentCharWidht = font.getGlyph(currentString[currentStringSize-1],fontSize,false).advance;
                             currentString.erase(currentStringSize - 1, 1);
                             blinkingLineIndexX-- ; 
-                            setBlinkingLineCordPos(blinkingLineXpos,blinkingLineYpos,blinkingLineIndexX,blinkingLineIndexY,textBounds[blinkingLineOnPage].getPosition(),fontSize + 2*(lineSpacing),-currentCharWidht);
+                            setBlinkingLineCordPos(blinkingLineXpos,blinkingLineYpos,blinkingLineIndexX,blinkingLineIndexY,textBounds[blinkingLineOnPage].getPosition(),blinkingLineLenght,-currentCharWidht);
 
                         }
                     }
@@ -340,7 +368,7 @@ int main()
                     { // Enter key (optional: handle differently)
                         currentString.insert(currentStringSize, '\n');
                         blinkingLineIndexY++;
-                        setBlinkingLineCordPos(blinkingLineXpos,blinkingLineYpos,blinkingLineIndexX,blinkingLineIndexY,textBounds[blinkingLineOnPage].getPosition(),fontSize + 2*(lineSpacing),0);
+                        setBlinkingLineCordPos(blinkingLineXpos,blinkingLineYpos,blinkingLineIndexX,blinkingLineIndexY,textBounds[blinkingLineOnPage].getPosition(),blinkingLineLenght,0);
                         // blinkingLineXpos = window.mapCoordsToPixel(tempText.getPosition()).x;
                         blinkingLineXpos = textBounds[blinkingLineOnPage].getPosition().x;
                         // blinkingLineXpos = 500;
@@ -351,7 +379,7 @@ int main()
                         currentCharWidht = font.getGlyph(static_cast<char>(event.text.unicode),fontSize,false).advance;
                         currentString.insert(currentStringSize, static_cast<char>(event.text.unicode));
                         blinkingLineIndexX++;
-                        setBlinkingLineCordPos(blinkingLineXpos,blinkingLineYpos,blinkingLineIndexX,blinkingLineIndexY,textBounds[blinkingLineOnPage].getPosition(),fontSize + 2*(lineSpacing),currentCharWidht);
+                        setBlinkingLineCordPos(blinkingLineXpos,blinkingLineYpos,blinkingLineIndexX,blinkingLineIndexY,textBounds[blinkingLineOnPage].getPosition(),blinkingLineLenght,currentCharWidht);
 
                     }
                     texts[blinkingLineOnPage].chars = currentString;

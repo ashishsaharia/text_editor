@@ -158,6 +158,58 @@ text/fast:
 	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/text.dir/build.make libs/CMakeFiles/text.dir/build
 .PHONY : text/fast
 
+# Convenience name for target.
+libs/CMakeFiles/stringDoublyLinkedList.dir/rule:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/CMakeFiles/stringDoublyLinkedList.dir/rule
+.PHONY : libs/CMakeFiles/stringDoublyLinkedList.dir/rule
+
+# Convenience name for target.
+stringDoublyLinkedList: libs/CMakeFiles/stringDoublyLinkedList.dir/rule
+.PHONY : stringDoublyLinkedList
+
+# fast build rule for target.
+stringDoublyLinkedList/fast:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/stringDoublyLinkedList.dir/build.make libs/CMakeFiles/stringDoublyLinkedList.dir/build
+.PHONY : stringDoublyLinkedList/fast
+
+# Convenience name for target.
+libs/CMakeFiles/linesDoublyLinkedList.dir/rule:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/CMakeFiles/linesDoublyLinkedList.dir/rule
+.PHONY : libs/CMakeFiles/linesDoublyLinkedList.dir/rule
+
+# Convenience name for target.
+linesDoublyLinkedList: libs/CMakeFiles/linesDoublyLinkedList.dir/rule
+.PHONY : linesDoublyLinkedList
+
+# fast build rule for target.
+linesDoublyLinkedList/fast:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/linesDoublyLinkedList.dir/build.make libs/CMakeFiles/linesDoublyLinkedList.dir/build
+.PHONY : linesDoublyLinkedList/fast
+
+linesDoublyLinkedList.o: linesDoublyLinkedList.cpp.o
+.PHONY : linesDoublyLinkedList.o
+
+# target to build an object file
+linesDoublyLinkedList.cpp.o:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/linesDoublyLinkedList.dir/build.make libs/CMakeFiles/linesDoublyLinkedList.dir/linesDoublyLinkedList.cpp.o
+.PHONY : linesDoublyLinkedList.cpp.o
+
+linesDoublyLinkedList.i: linesDoublyLinkedList.cpp.i
+.PHONY : linesDoublyLinkedList.i
+
+# target to preprocess a source file
+linesDoublyLinkedList.cpp.i:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/linesDoublyLinkedList.dir/build.make libs/CMakeFiles/linesDoublyLinkedList.dir/linesDoublyLinkedList.cpp.i
+.PHONY : linesDoublyLinkedList.cpp.i
+
+linesDoublyLinkedList.s: linesDoublyLinkedList.cpp.s
+.PHONY : linesDoublyLinkedList.s
+
+# target to generate assembly for a file
+linesDoublyLinkedList.cpp.s:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/linesDoublyLinkedList.dir/build.make libs/CMakeFiles/linesDoublyLinkedList.dir/linesDoublyLinkedList.cpp.s
+.PHONY : linesDoublyLinkedList.cpp.s
+
 page.o: page.cpp.o
 .PHONY : page.o
 
@@ -206,6 +258,30 @@ scrollBar.cpp.s:
 	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/scrollbar.dir/build.make libs/CMakeFiles/scrollbar.dir/scrollBar.cpp.s
 .PHONY : scrollBar.cpp.s
 
+stringDoublyLinkedList.o: stringDoublyLinkedList.cpp.o
+.PHONY : stringDoublyLinkedList.o
+
+# target to build an object file
+stringDoublyLinkedList.cpp.o:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/stringDoublyLinkedList.dir/build.make libs/CMakeFiles/stringDoublyLinkedList.dir/stringDoublyLinkedList.cpp.o
+.PHONY : stringDoublyLinkedList.cpp.o
+
+stringDoublyLinkedList.i: stringDoublyLinkedList.cpp.i
+.PHONY : stringDoublyLinkedList.i
+
+# target to preprocess a source file
+stringDoublyLinkedList.cpp.i:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/stringDoublyLinkedList.dir/build.make libs/CMakeFiles/stringDoublyLinkedList.dir/stringDoublyLinkedList.cpp.i
+.PHONY : stringDoublyLinkedList.cpp.i
+
+stringDoublyLinkedList.s: stringDoublyLinkedList.cpp.s
+.PHONY : stringDoublyLinkedList.s
+
+# target to generate assembly for a file
+stringDoublyLinkedList.cpp.s:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/stringDoublyLinkedList.dir/build.make libs/CMakeFiles/stringDoublyLinkedList.dir/stringDoublyLinkedList.cpp.s
+.PHONY : stringDoublyLinkedList.cpp.s
+
 text.o: text.cpp.o
 .PHONY : text.o
 
@@ -238,15 +314,23 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... linesDoublyLinkedList"
 	@echo "... page"
 	@echo "... scrollbar"
+	@echo "... stringDoublyLinkedList"
 	@echo "... text"
+	@echo "... linesDoublyLinkedList.o"
+	@echo "... linesDoublyLinkedList.i"
+	@echo "... linesDoublyLinkedList.s"
 	@echo "... page.o"
 	@echo "... page.i"
 	@echo "... page.s"
 	@echo "... scrollBar.o"
 	@echo "... scrollBar.i"
 	@echo "... scrollBar.s"
+	@echo "... stringDoublyLinkedList.o"
+	@echo "... stringDoublyLinkedList.i"
+	@echo "... stringDoublyLinkedList.s"
 	@echo "... text.o"
 	@echo "... text.i"
 	@echo "... text.s"

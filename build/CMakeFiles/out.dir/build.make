@@ -95,6 +95,8 @@ out: CMakeFiles/out.dir/build.make
 out: libs/libpage.a
 out: libs/libscrollbar.a
 out: libs/libtext.a
+out: libs/libstringDoublyLinkedList.a
+out: libs/liblinesDoublyLinkedList.a
 out: CMakeFiles/out.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/snobody04/projects/textEditor3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable out"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/out.dir/link.txt --verbose=$(VERBOSE)

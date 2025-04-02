@@ -1,3 +1,5 @@
 add_library(page page.cpp)
 add_library(scrollbar scrollBar.cpp)
 add_library(text text.cpp)
+add_library(stringDoublyLinkedList stringDoublyLinkedList.cpp)
+add_library(linesDoublyLinkedList linesDoublyLinkedList.cpp)

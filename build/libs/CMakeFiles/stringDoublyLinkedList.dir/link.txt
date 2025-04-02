@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstringDoublyLinkedList.a CMakeFiles/stringDoublyLinkedList.dir/stringDoublyLinkedList.cpp.o
+/usr/bin/ranlib libstringDoublyLinkedList.a

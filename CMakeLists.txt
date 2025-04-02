@@ -7,4 +7,4 @@ add_subdirectory(libs)
 
 add_executable(out main.cpp)
 
-target_link_libraries(out sfml-system sfml-window sfml-graphics sfml-audio page scrollbar text)
+target_link_libraries(out sfml-system sfml-window sfml-graphics sfml-audio page scrollbar text stringDoublyLinkedList linesDoublyLinkedList)

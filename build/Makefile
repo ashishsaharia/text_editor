@@ -168,6 +168,32 @@ text/fast:
 	$(MAKE) $(MAKESILENT) -f libs/CMakeFiles/text.dir/build.make libs/CMakeFiles/text.dir/build
 .PHONY : text/fast
 
+#=============================================================================
+# Target rules for targets named stringDoublyLinkedList
+
+# Build rule for target.
+stringDoublyLinkedList: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stringDoublyLinkedList
+.PHONY : stringDoublyLinkedList
+
+# fast build rule for target.
+stringDoublyLinkedList/fast:
+	$(MAKE) $(MAKESILENT) -f libs/CMakeFiles/stringDoublyLinkedList.dir/build.make libs/CMakeFiles/stringDoublyLinkedList.dir/build
+.PHONY : stringDoublyLinkedList/fast
+
+#=============================================================================
+# Target rules for targets named linesDoublyLinkedList
+
+# Build rule for target.
+linesDoublyLinkedList: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 linesDoublyLinkedList
+.PHONY : linesDoublyLinkedList
+
+# fast build rule for target.
+linesDoublyLinkedList/fast:
+	$(MAKE) $(MAKESILENT) -f libs/CMakeFiles/linesDoublyLinkedList.dir/build.make libs/CMakeFiles/linesDoublyLinkedList.dir/build
+.PHONY : linesDoublyLinkedList/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -200,9 +226,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... linesDoublyLinkedList"
 	@echo "... out"
 	@echo "... page"
 	@echo "... scrollbar"
+	@echo "... stringDoublyLinkedList"
 	@echo "... text"
 	@echo "... main.o"
 	@echo "... main.i"
