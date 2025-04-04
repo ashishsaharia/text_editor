@@ -186,6 +186,44 @@ linesDoublyLinkedList/fast:
 	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/linesDoublyLinkedList.dir/build.make libs/CMakeFiles/linesDoublyLinkedList.dir/build
 .PHONY : linesDoublyLinkedList/fast
 
+# Convenience name for target.
+libs/CMakeFiles/blinkingLine.dir/rule:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/CMakeFiles/blinkingLine.dir/rule
+.PHONY : libs/CMakeFiles/blinkingLine.dir/rule
+
+# Convenience name for target.
+blinkingLine: libs/CMakeFiles/blinkingLine.dir/rule
+.PHONY : blinkingLine
+
+# fast build rule for target.
+blinkingLine/fast:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/blinkingLine.dir/build.make libs/CMakeFiles/blinkingLine.dir/build
+.PHONY : blinkingLine/fast
+
+blinkingLine.o: blinkingLine.cpp.o
+.PHONY : blinkingLine.o
+
+# target to build an object file
+blinkingLine.cpp.o:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/blinkingLine.dir/build.make libs/CMakeFiles/blinkingLine.dir/blinkingLine.cpp.o
+.PHONY : blinkingLine.cpp.o
+
+blinkingLine.i: blinkingLine.cpp.i
+.PHONY : blinkingLine.i
+
+# target to preprocess a source file
+blinkingLine.cpp.i:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/blinkingLine.dir/build.make libs/CMakeFiles/blinkingLine.dir/blinkingLine.cpp.i
+.PHONY : blinkingLine.cpp.i
+
+blinkingLine.s: blinkingLine.cpp.s
+.PHONY : blinkingLine.s
+
+# target to generate assembly for a file
+blinkingLine.cpp.s:
+	cd /home/snobody04/projects/textEditor3/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/blinkingLine.dir/build.make libs/CMakeFiles/blinkingLine.dir/blinkingLine.cpp.s
+.PHONY : blinkingLine.cpp.s
+
 linesDoublyLinkedList.o: linesDoublyLinkedList.cpp.o
 .PHONY : linesDoublyLinkedList.o
 
@@ -314,11 +352,15 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... blinkingLine"
 	@echo "... linesDoublyLinkedList"
 	@echo "... page"
 	@echo "... scrollbar"
 	@echo "... stringDoublyLinkedList"
 	@echo "... text"
+	@echo "... blinkingLine.o"
+	@echo "... blinkingLine.i"
+	@echo "... blinkingLine.s"
 	@echo "... linesDoublyLinkedList.o"
 	@echo "... linesDoublyLinkedList.i"
 	@echo "... linesDoublyLinkedList.s"

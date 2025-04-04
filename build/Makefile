@@ -194,6 +194,19 @@ linesDoublyLinkedList/fast:
 	$(MAKE) $(MAKESILENT) -f libs/CMakeFiles/linesDoublyLinkedList.dir/build.make libs/CMakeFiles/linesDoublyLinkedList.dir/build
 .PHONY : linesDoublyLinkedList/fast
 
+#=============================================================================
+# Target rules for targets named blinkingLine
+
+# Build rule for target.
+blinkingLine: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 blinkingLine
+.PHONY : blinkingLine
+
+# fast build rule for target.
+blinkingLine/fast:
+	$(MAKE) $(MAKESILENT) -f libs/CMakeFiles/blinkingLine.dir/build.make libs/CMakeFiles/blinkingLine.dir/build
+.PHONY : blinkingLine/fast
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -226,6 +239,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... blinkingLine"
 	@echo "... linesDoublyLinkedList"
 	@echo "... out"
 	@echo "... page"

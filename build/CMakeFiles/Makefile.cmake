@@ -52,4 +52,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "libs/CMakeFiles/text.dir/DependInfo.cmake"
   "libs/CMakeFiles/stringDoublyLinkedList.dir/DependInfo.cmake"
   "libs/CMakeFiles/linesDoublyLinkedList.dir/DependInfo.cmake"
+  "libs/CMakeFiles/blinkingLine.dir/DependInfo.cmake"
   )

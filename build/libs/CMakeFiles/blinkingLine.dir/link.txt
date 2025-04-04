@@ -1,0 +1,2 @@
+/usr/bin/ar qc libblinkingLine.a CMakeFiles/blinkingLine.dir/blinkingLine.cpp.o
+/usr/bin/ranlib libblinkingLine.a
